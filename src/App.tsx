@@ -1,15 +1,15 @@
 import logoYuan from "/assets/logo-yuan.png";
-import logoAegea from "/assets/logo-aegea.png";
+import logoAegea from "/assets/logo-aegea-cortada.png";
 import { Chat } from "./components/Chat";
 
 
 function App() {
     return (
-        <div className="min-h-screen flex items-center justify-center p-4">
+        <div className="min-h-screen flex items-center justify-center p-6">
             <div className="container mx-auto max-w-7xl">
-                <div className="grid lg:grid-cols-2 gap-12 items-center">
-                    <div className="space-y-6">
-                        <div className="flex items-center gap-10">
+                <div className="grid lg:grid-cols-2 gap-6 items-center">
+                    <div className="flex flex-col gap-6">
+                        <div className="flex items-center gap-6">
                             <img
                                 src={logoYuan}
                                 alt="Yuan Soluções"
