@@ -1,7 +1,5 @@
 import logoYuan from "/assets/logo-yuan.png";
 import logoAegea from "/assets/logo-aegea-cortada.png";
-import { Chat } from "./components/Chat";
-
 
 function App() {
     return (
@@ -36,7 +34,14 @@ function App() {
                         </p>
                     </div>
 
-                    <Chat />
+                    <iframe
+                        src="https://bot-aegea.zapfacil.pro/chat-yuan-aegea"
+                        style={{
+                            border: "none",
+                            width: "100%",
+                            height: "28rem",
+                        }}
+                    />
                 </div>
             </div>
         </div>
