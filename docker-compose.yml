@@ -3,8 +3,6 @@ version: '3.8'
 services:
   react-app:
     image: react-app
-    build: .
-    container_name: react-app
     restart: unless-stopped
     labels:
       - "traefik.enable=true"
@@ -13,10 +11,10 @@ services:
       - "traefik.http.routers.react-app.tls.certresolver=letsencrypt"
       - "traefik.http.services.react-app.loadbalancer.server.port=3000"
     networks:
-      - traefik_public
+      - typebot-aegeaNet
     ports:
       - "5173:3000"
 
 networks:
-  traefik_public:
+  typebot-aegeaNet:
     external: true
