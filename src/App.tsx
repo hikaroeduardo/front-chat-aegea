@@ -1,16 +1,9 @@
-import { useState, useEffect } from "react";
 import logoYuan from "/assets/logo-yuan.png";
 import logoAegea from "/assets/logo-aegea-cortada.png";
 
 import { LuBot } from "react-icons/lu";
 
 function App() {
-    const [isLoading, setIsLoading] = useState<boolean>(true);
-
-    const handleLoading = () => {
-        setIsLoading(false);
-    };
-
     return (
         <div className="min-h-screen flex items-center justify-center p-6">
             <div className="container mx-auto max-w-7xl">
@@ -60,7 +53,6 @@ function App() {
                                 height: "28rem",
                                 borderRadius: "0 0 1rem 1rem",
                             }}
-                            onLoad={handleLoading}
                         />
                     </div>
                 </div>
