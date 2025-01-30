@@ -46,7 +46,7 @@ function App() {
                         </div>
 
                         <iframe
-                            src="https://bot-aegea.zapfacil.pro/chat-yuan-aegea"
+                            src="https://chat-aegea.zapfacil.pro/assistente-virtual-aegea"
                             style={{
                                 border: "none",
                                 width: "100%",
