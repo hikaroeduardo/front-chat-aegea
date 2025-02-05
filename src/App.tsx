@@ -1,9 +1,33 @@
+import { cidades } from "./data/cidades";
+
 import logoYuan from "/assets/logo-yuan.png";
 import logoAegea from "/assets/logo-aegea-cortada.png";
 
 import { LuBot } from "react-icons/lu";
 
+type CidadeProps = {
+    id: number;
+    name: string;
+    created_at: string;
+    updated_at: string;
+    email: string;
+    config_email: string;
+    cod_credor: string;
+    nom_loja: string;
+    loja: string;
+    credor: string;
+};
+
 function App() {
+    const pathname = window.location.pathname;
+
+    const matricula = pathname.split("/")[1].split("-")[0];
+    const codCidade = pathname.split("-")[1];
+
+    const cidade = cidades.filter(
+        (cid: CidadeProps) => cid.cod_credor === codCidade
+    );
+
     return (
         <div className="min-h-screen flex items-center justify-center p-6">
             <div className="container mx-auto max-w-7xl">
@@ -46,7 +70,9 @@ function App() {
                         </div>
 
                         <iframe
-                            src="https://chat-aegea.zapfacil.pro/assistente-virtual-aegea"
+                            src={`https://chat-aegea.zapfacil.pro/aegea?matricula=${matricula}&cidade=${
+                                cidade[0]?.credor ? cidade[0].credor : ""
+                            }`}
                             style={{
                                 border: "none",
                                 width: "100%",
