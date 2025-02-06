@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { cidades } from "./data/cidades";
 
 import logoYuan from "/assets/logo-yuan.png";
@@ -27,6 +28,25 @@ function App() {
     const cidade = cidades.filter(
         (cid: CidadeProps) => cid.cod_credor === codCidade
     );
+
+    useEffect(() => {
+        const saveMatriculaAndCodCredor = async () => {
+            const dataBody = {
+                des_regis: matricula || "",
+                cod_credor: codCidade || "",
+            };
+
+            await fetch(
+                "https://n8n.allstark.com.br/webhook/85eb19c1-e69e-47e9-a293-d2d31df2b072",
+                {
+                    method: "POST",
+                    body: JSON.stringify(dataBody),
+                }
+            );
+        };
+
+        saveMatriculaAndCodCredor();
+    }, []);
 
     return (
         <div className="min-h-screen flex items-center justify-center p-6">
